@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mayorganic"
+    }
+  },
+  "defaultProject": "mayorganic",
+  "cli": {
+    "analytics": false
+  }
 }
