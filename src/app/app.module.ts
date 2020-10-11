@@ -12,6 +12,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { TarjetaProductoComponent } from './shared/tarjeta-producto/tarjeta-producto.component';
+import { DetalleProductosComponent } from './components/detalle-productos/detalle-productos.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     ContactoComponent,
     ProductosComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    TarjetaProductoComponent,
+    DetalleProductosComponent
   ],
   imports: [
     BrowserModule,
