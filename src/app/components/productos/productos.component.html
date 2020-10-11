@@ -1,1 +1,10 @@
-<p>productos works!</p>
+<h1>Productos Biotiquín</h1>
+<hr>
+
+<div class="alert alert-light" role="alert">
+    Conoce más acerca de los productos BIOtiquín que ofrecemos y los beneficios que estos aportan a tu salud.
+</div>
+
+<div class="card-columns">
+    <app-tarjeta-producto [produc]="produc" *ngFor="let produc of productos; let i = index"></app-tarjeta-producto>
+</div>

@@ -1,1 +1,9 @@
-<p>tarjeta-producto works!</p>
+<div class="card animated padding-cards sombra-tarjetas">
+    <img [src]="produc.img" class="card-img-top img-fluid" alt="">
+    <div class="card-body">
+        <h5 class="card-title">{{ produc.nombre }}</h5>
+        <p class="card-text">Contenido: <span class="badge badge-success">{{ produc.tamanio }}</span></p>
+        <p class="card-text">Porciones: <br><small class="text-muted">{{ produc.porciones }}</small></p>
+        <button (click)="verProducto()" class="btn btn-outline-success btn-block">Ver más...</button>
+    </div>
+</div>
