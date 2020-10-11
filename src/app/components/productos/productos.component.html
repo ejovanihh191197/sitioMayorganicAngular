@@ -6,5 +6,5 @@
 </div>
 
 <div class="card-columns">
-    <app-tarjeta-producto [produc]="produc" *ngFor="let produc of productos; let i = index"></app-tarjeta-producto>
+    <app-tarjeta-producto [produc]="produc" [index]="i" *ngFor="let produc of productos; let i = index"></app-tarjeta-producto>
 </div>

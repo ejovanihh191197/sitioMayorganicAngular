@@ -9,7 +9,8 @@ export class TarjetaProductoComponent implements OnInit {
 
   @Input()
   produc: any = {};
-
+  @Input()
+  index: any;
   constructor() { }
 
   ngOnInit(): void {
