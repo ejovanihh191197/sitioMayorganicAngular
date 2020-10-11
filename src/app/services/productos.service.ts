@@ -58,7 +58,7 @@ export class ProductosService {
   }
 
   public getProductoById( i: number ): Producto{
-    return this.getProductos[i];
+    return this.productos[i];
   }
 
   constructor() { }

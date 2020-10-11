@@ -9,7 +9,6 @@ import { ProductosService, Producto } from '../../services/productos.service';
 export class ProductosComponent implements OnInit {
 
   productos: Producto[];
-
   constructor( private producService: ProductosService ) {
     this.cargarProductos();
   }

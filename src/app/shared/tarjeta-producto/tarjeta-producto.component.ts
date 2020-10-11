@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarjeta-producto',
@@ -11,9 +12,13 @@ export class TarjetaProductoComponent implements OnInit {
   produc: any = {};
   @Input()
   index: any;
-  constructor() { }
+  constructor( private router: Router ) { }
 
   ngOnInit(): void {
+  }
+
+  public verProducto( i: number): any {
+    this.router.navigate(['detalle', i]);
   }
 
 }
