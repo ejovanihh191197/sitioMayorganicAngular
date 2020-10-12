@@ -49,14 +49,28 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <h3>Principales beneficios de {{ producto.nombre }}</h3>
-            <ul class="list-group list-group-flush">
-                <li *ngFor="let propiedad of producto.propiedades; let i = index;" class="list-group-item">
-                    <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ propiedad }}
-                </li>
-            </ul>
-        </div>
+</div>
+<h3>Principales Beneficios de {{ producto.nombre }}</h3>
+<div *ngIf="listo" class="row">
+    <div class="col-4">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let col of listaBeneficios.columna1" class="list-group-item">
+                <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ col }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let col of listaBeneficios.columna2" class="list-group-item">
+                <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ col }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let col of listaBeneficios.columna3" class="list-group-item">
+                <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ col }}
+            </li>
+        </ul>
     </div>
 </div>
