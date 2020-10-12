@@ -1,11 +1,11 @@
 <h1>Detalles de <small>{{ producto.nombre }}</small> </h1>
 <hr>
 <div class="row mb-5 mt-4">
-    <div class="col-5 text-center">
+    <div id="detalle-columna1" class="col-5 text-center">
         <img class="img-fluid sombra-tarjetas" [src]="producto.img" alt="imagen de producto">
         <button style="width: 85%;" class="btn btn-outline-danger mt-3" (click)="regresar()">Regresar</button>
     </div>
-    <div class="col-7">
+    <div id="detalle-columna2" class="col-7">
         <h3>Información General</h3>
         <div class="alert alert-light" role="alert">
             Contenido: <span class="badge badge-success">{{ producto.tamanio }}</span> <br> Porciones: {{ producto.porciones }}
@@ -51,26 +51,12 @@
     </div>
 </div>
 <h3>Principales Beneficios de {{ producto.nombre }}</h3>
-<div *ngIf="listo" class="row">
-    <div class="col-4">
-        <ul class="list-group list-group-flush">
-            <li *ngFor="let col of listaBeneficios.columna1" class="list-group-item">
+<div class="row mb-3">
+    <div class="col">
+        <div class="container list-group list-group-flush">
+            <div *ngFor="let col of producto.propiedades" class="item list-group-item">
                 <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ col }}
-            </li>
-        </ul>
-    </div>
-    <div class="col-4">
-        <ul class="list-group list-group-flush">
-            <li *ngFor="let col of listaBeneficios.columna2" class="list-group-item">
-                <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ col }}
-            </li>
-        </ul>
-    </div>
-    <div class="col-4">
-        <ul class="list-group list-group-flush">
-            <li *ngFor="let col of listaBeneficios.columna3" class="list-group-item">
-                <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ col }}
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </div>

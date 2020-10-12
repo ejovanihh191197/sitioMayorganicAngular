@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
@@ -43,15 +45,44 @@ export class ContactoComponent implements OnInit {
       texto:    ['', [Validators.required]]
     });
   }
-  enviar(){
-    var formD: any = new FormData();
-    formD.append('nombre', this.forma.get('nombre').value);
-    formD.append('email', this.forma.get('email').value);
-    formD.append('telefono', this.forma.get('telefono').value);
-    formD.append('texto', this.forma.get('texto').value);
-    this.httpSer.sendPostRequest( formD ).subscribe( (resp) => {
-      console.log(resp);
+
+  cargarDatos(){
+    this.forma.reset(
+      {
+        nombre:   '',
+        email:    '',
+        telefono: '',
+        texto:    ''
     });
+  }
+
+  enviar(){
+    if (this.forma.valid) {
+      let formD: any = new FormData();
+      formD.append('nombre', this.forma.get('nombre').value);
+      formD.append('email', this.forma.get('email').value);
+      formD.append('telefono', this.forma.get('telefono').value);
+      formD.append('texto', this.forma.get('texto').value);
+      this.httpSer.sendPostRequest( formD ).subscribe( (resp) => {
+        console.log(resp);
+        Swal.fire({
+          title: '¡Éxito!',
+          text: 'Se a enviado correctamente tu correo',
+          icon: 'success'
+        });
+        this.cargarDatos();
+      });
+    }else{
+      return Object.values( this.forma.controls ).forEach( controles => {
+        if ( controles instanceof FormGroup ){
+          Object.values( controles.controls ).forEach( control => {
+            control.markAsTouched();
+          });
+        }else{
+          controles.markAsTouched();
+        }
+      });
+    }
   }
 
 }

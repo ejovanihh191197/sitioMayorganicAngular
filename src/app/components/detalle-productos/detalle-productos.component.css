@@ -1,0 +1,21 @@
+.container {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.item {
+    width: 33%;
+}
+
+@media only screen and (max-width: 750px) {
+    .item {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .item {
+        width: 100%;
+    }
+}
