@@ -24,4 +24,8 @@ export class DetalleProductosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  regresar(): any {
+    this.ruteador.navigate(['productos']);
+  }
+
 }

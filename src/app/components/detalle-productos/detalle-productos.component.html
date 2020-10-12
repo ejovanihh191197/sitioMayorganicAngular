@@ -1,10 +1,62 @@
 <h1>Detalles de <small>{{ producto.nombre }}</small> </h1>
 <hr>
-<div class="row mb-5">
-    <div class="col-5">
+<div class="row mb-5 mt-4">
+    <div class="col-5 text-center">
         <img class="img-fluid sombra-tarjetas" [src]="producto.img" alt="imagen de producto">
+        <button style="width: 85%;" class="btn btn-outline-danger mt-3" (click)="regresar()">Regresar</button>
     </div>
     <div class="col-7">
-        <h3>Sobre los </h3>
+        <h3>Información General</h3>
+        <div class="alert alert-light" role="alert">
+            Contenido: <span class="badge badge-success">{{ producto.tamanio }}</span> <br> Porciones: {{ producto.porciones }}
+        </div>
+        <h3>Información Nutrimental</h3>
+        <table *ngIf="producto.info" class="table table-striped">
+            <thead class="bg-success">
+                <tr>
+                    <th>Contenido</th>
+                    <th>Cantidad</th>
+                    <th *ngIf="producto.nombre !== 'BIOteno'">% Valor diario</th>
+                    <th *ngIf="producto.nombre === 'BIOteno'">* VRN por porción 2g</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let info of producto.info">
+                    <td>{{ info.contenido }}</td>
+                    <td>{{ info.calorias }}</td>
+                    <td>{{ info.vrn }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table *ngIf="producto.vitaminas" class="table table-striped">
+            <thead class="bg-success">
+                <tr>
+                    <th class="text-center">Contenido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let info of producto.vitaminas">
+                    <td class="text-center">{{ info }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="producto.descripcion" class="row mt-3">
+        <div class="col">
+            <h3>Más información del producto</h3>
+            <div class="alert alert-light" role="alert">
+                {{ producto.descripcion }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Principales beneficios de {{ producto.nombre }}</h3>
+            <ul class="list-group list-group-flush">
+                <li *ngFor="let propiedad of producto.propiedades; let i = index;" class="list-group-item">
+                    <img width="18px" src="assets/img/comprobado.svg" alt=""> {{ propiedad }}
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

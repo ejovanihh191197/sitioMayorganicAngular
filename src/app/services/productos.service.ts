@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 interface Contenido {
   contenido: string;
-  caloreias: string;
+  calorias: string;
   vrn: string;
 }
 export interface Producto{
@@ -34,22 +34,22 @@ export class ProductosService {
       info: [
         {
           contenido: 'Calorias',
-          caloreias: '5.5',
+          calorias: '5.5',
           vrn: ''
         },
         {
           contenido: 'Proteinas',
-          caloreias: '0.02 gr',
+          calorias: '0.02 gr',
           vrn: ''
         },
         {
           contenido: 'Lípidos',
-          caloreias: '0.004 gr',
+          calorias: '0.004 gr',
           vrn: '0 %'
         },
         {
           contenido: 'Carbohidratos',
-          caloreias: '1.16 gr',
+          calorias: '1.16 gr',
           vrn: '0.4 %'
         }
       ]
@@ -63,22 +63,22 @@ export class ProductosService {
       info: [
         {
           contenido: 'Calorias',
-          caloreias: '25',
+          calorias: '25',
           vrn: ''
         },
         {
           contenido: 'Proteinas',
-          caloreias: '0.58 gr',
+          calorias: '0.58 gr',
           vrn: ''
         },
         {
           contenido: 'Lípidos',
-          caloreias: '0.02 gr',
+          calorias: '0.02 gr',
           vrn: '0 %'
         },
         {
           contenido: 'Carbohidratos',
-          caloreias: '5.52 gr',
+          calorias: '5.52 gr',
           vrn: '0.2 %'
         }
       ]
@@ -92,22 +92,22 @@ export class ProductosService {
       info: [
         {
           contenido: 'Calorias',
-          caloreias: '5.5',
+          calorias: '5.5',
           vrn: ''
         },
         {
           contenido: 'Proteinas',
-          caloreias: '0.02 gr',
+          calorias: '0.02 gr',
           vrn: ''
         },
         {
           contenido: 'Lípidos',
-          caloreias: '0.004 gr',
+          calorias: '0.004 gr',
           vrn: '0 %'
         },
         {
           contenido: 'Carbohidratos',
-          caloreias: '1.16 gr',
+          calorias: '1.16 gr',
           vrn: '0.4 %'
         }
       ]
@@ -121,22 +121,22 @@ export class ProductosService {
       info: [
         {
           contenido: 'Contenido energetico',
-          caloreias: '8.37 KJ',
+          calorias: '8.37 KJ',
           vrn: '0.0009 %'
         },
         {
           contenido: 'Proteinas',
-          caloreias: '0.06 gr',
+          calorias: '0.06 gr',
           vrn: '0.0012 %'
         },
         {
           contenido: 'Lípidos',
-          caloreias: '0.06 gr',
+          calorias: '0.06 gr',
           vrn: '0.0008 %'
         },
         {
           contenido: 'Sodio',
-          caloreias: '1 mg',
+          calorias: '1 mg',
           vrn: '*'
         }
       ]
