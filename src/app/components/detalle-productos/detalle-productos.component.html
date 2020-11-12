@@ -1,11 +1,11 @@
 <h1>Detalles de <small>{{ producto.nombre }}</small> </h1>
 <hr>
 <div class="row mb-5 mt-4">
-    <div id="detalle-columna1" class="col-5 text-center">
+    <div class="col-md-5 text-center">
         <img class="img-fluid sombra-tarjetas" [src]="producto.img" alt="imagen de producto">
         <button style="width: 85%;" class="btn btn-outline-danger mt-3" (click)="regresar()">Regresar</button>
     </div>
-    <div id="detalle-columna2" class="col-7">
+    <div class="col-md-7">
         <h3>Información General</h3>
         <div class="alert alert-light" role="alert">
             Contenido: <span class="badge badge-success">{{ producto.tamanio }}</span> <br> Porciones: {{ producto.porciones }}

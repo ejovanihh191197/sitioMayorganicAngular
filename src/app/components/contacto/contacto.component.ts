@@ -40,7 +40,7 @@ export class ContactoComponent implements OnInit {
   crearFormulario(){
     this.forma = this.fb.group({
       nombre:   ['', [Validators.required]],
-      email:    ['', [Validators.required, Validators.pattern('[a-z0-9]+([a-z0-9.-_]+)*@[a-z]+(\.[a-z]{2,3})+$')]],
+      email:    ['', [Validators.required, Validators.pattern('[a-z0-9]+([a-z0-9._-]+)*@[a-z]+(\.[a-z]{2,3})+$')]],
       telefono: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       texto:    ['', [Validators.required]]
     });
